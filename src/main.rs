@@ -1,8 +1,9 @@
 
 use std::io;
-use crate::command_input::command_input;
-pub mod command_input;
-pub mod extractor;
+use crate::matching::matching;
+pub mod matching;
+pub mod helpers;
+pub mod types;
 
 fn main() -> io::Result<()>{
     println!("TODO list APP!");
@@ -20,7 +21,7 @@ fn main() -> io::Result<()>{
     println!("5.Deletes all tasks => reset");
     println!("6.Quite => quite\n\n");
     
-    command_input()?;
+    matching()?;
     
     Ok(())
 }
